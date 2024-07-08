@@ -1,0 +1,18 @@
+# File path: /etc/systemd/system/dreame-api.service
+# sudo systemctl daemon-reload
+# sudo systemctl start dreame-api
+# sudo systemctl enable dreame-api
+# sudo systemctl status dreame-api
+[Unit]
+Description=Dreame API Service
+After=network.target
+
+[Service]
+User=ubuntu  # 注意修改用户名
+WorkingDirectory=/path/to/dreame-api  # 注意修改路径
+ExecStart=/path/to/dreame-api/dreame-api --port 3000 --log-dir /path/to/dreame-api/logs  # 注意修改路径和端口号
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
