@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   dreame-api:
-    image: "${REGISTRY:-docker.io}/knightgao/ai-dreame-api:latest"
+    image: "${REGISTRY:-docker.io}/knightgao/dreame-api:latest"
     container_name: dreame-api
     restart: always
     command: --log-dir /app/logs
